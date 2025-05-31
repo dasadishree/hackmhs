@@ -7,7 +7,8 @@
     "topselling2": "Smoothies",
     "topselling3": "Juices",
     "logoImage": "../images/playa-bowls.png",
-    "reward": "Free smoothie"
+    "reward": "Free smoothie",
+    "state": "Florida"
   },
   {
     "businessName": "CycleBar",
@@ -17,7 +18,8 @@
     "topselling2": "Connect classes",
     "topselling3": "Performance cycling",
     "logoImage": "../images/cyclebar.png",
-    "reward": "Free 1 hour class"
+    "reward": "Free 1 hour class",
+    "state": "New Jersey"
   },
   {
     "businessName": "Liv Breads",
@@ -27,7 +29,8 @@
     "topselling2": "Coffee",
     "topselling3": "Pastries",
     "logoImage": "../images/liv-breads.png",
-    "reward": "Free crossiant"
+    "reward": "Free crossiant",
+    "state": "Pennsylvania"
   },
   {
     "businessName": "Tito's Burritos & Wings",
@@ -37,6 +40,7 @@
     "topselling2": "Burritos",
     "topselling3": "Tacos",
     "logoImage": "http://localhost:3000/1748704436512-titos-burritos.png",
-    "reward": "Spicy wings"
+    "reward": "Spicy wings",
+    "state": "Texas"
   }
 ]
