@@ -1,1 +1,1 @@
-web: node image-upload-backend/index.js
+web: cd image-upload-backend && npm install && npm start
