@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const topselling1 = document.getElementById('topselling1').value;
         const topselling2 = document.getElementById('topselling2').value;
         const topselling3 = document.getElementById('topselling3').value;
-
-        if (!businessName || businessType === '--' || stamps === '--' || !topselling1 || !topselling2 || !topselling3) {
+        const reward = document.getElementById('reward').value;
+        if (!businessName || businessType === '--' || stamps === '--' || !topselling1 || !topselling2 || !topselling3 || !reward) {
             alert('Please fill in all required fields');
             return;
         }
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
         formData.append('topselling1', topselling1);
         formData.append('topselling2', topselling2);
         formData.append('topselling3', topselling3);
-
+        formData.append('reward', reward);
         const logoFile = document.getElementById('logoImage').files[0];
         if (logoFile) {
             formData.append('logoImage', logoFile);

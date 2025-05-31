@@ -6,15 +6,36 @@
     "topselling1": "Acai Bowls",
     "topselling2": "Smoothies",
     "topselling3": "Juices",
-    "logoImage": "../images/playa-bowls.png"
+    "logoImage": "../images/playa-bowls.png",
+    "reward": "Free smoothie"
   },
   {
     "businessName": "CycleBar",
     "businessType": "health & beauty",
-    "stamps": "10",
+    "stamps": "7",
     "topselling1": "Strength cycling classes",
     "topselling2": "Connect classes",
     "topselling3": "Performance cycling",
-    "logoImage": "../images/cyclebar.png"
+    "logoImage": "../images/cyclebar.png",
+    "reward": "Free 1 hour class"
+  },
+  {
+    "businessName": "Liv Breads",
+    "businessType": "groceries & markets",
+    "stamps": "5",
+    "topselling1": "Breads",
+    "topselling2": "Coffee",
+    "topselling3": "Pastries",
+    "logoImage": "../images/liv-breads.png",
+    "reward": "Free crossiant"
+  },
+  {
+    "businessName": "Tito's Burritos & Wings",
+    "businessType": "food & beverage",
+    "stamps": "3",
+    "topselling1": "Wings",
+    "topselling2": "Burritos",
+    "topselling3": "Tacos",
+    "logoImage": "http://localhost:3000/1748704436512-titos-burritos.png"
   }
 ]
