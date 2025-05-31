@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(205,99,125);
+}
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.btn-primary{
+    background-color: rgb(161,117,153);
+    border-width: 0px;
+}
+
+label{
+    color: white;
+}
+
+h2{
+    color: white;
+}
