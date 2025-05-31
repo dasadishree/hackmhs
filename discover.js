@@ -1,5 +1,6 @@
 let stamps = 0;
 let businessStamps = {};
+let userState = ''; // Add variable to store state
 
 // Load saved stamps from localStorage when the script starts
 function loadSavedStamps() {
@@ -80,7 +81,10 @@ document.addEventListener('DOMContentLoaded', function () {
                                 <small class="text-muted">${business.stamps} stamps on a card</small>
                                 <br>
                                 <small class="text-muted">Reward: ${business.reward}</small>
-                            </div>
+                                <br>
+                                <small class="text-muted">Minimum Purchase: ${business.minpurchase}</small>
+
+                                </div>
                         </div>
 
                         <div class="flip-card-back">
@@ -89,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             <img class="card-image" src="./stamp-images/${currentStamps}-stamps.png">
                             <center>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1" class="my-1 mt-4"><strong>password</strong></label>
+                                    <label for="stampCode-${safeBusinessName}" class="my-1 mt-4"><strong>password</strong></label>
                                     <input type="password" class="form-control" id="stampCode-${safeBusinessName}" placeholder="Password" />
                                 </div>
                                 <button type="button" class="btn" style="margin-top: 5px; background-color: #ef8172; border: 1cm;" 
@@ -122,9 +126,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 cardContainer.innerHTML = '';
 
-                businesses.forEach(business => {
+                // Filter businesses if userState is set
+                const filteredBusinesses = userState ? 
+                    businesses.filter(business => business.state === userState) : 
+                    businesses;
+
+                filteredBusinesses.forEach(business => {
                     cardContainer.innerHTML += createBusinessCard(business);
                 });
+
+                // Show message if no businesses found in state
+                if (userState && filteredBusinesses.length === 0) {
+                    cardContainer.innerHTML = `<div class="col-12 text-center">
+                        <h3>No businesses found in ${userState}</h3>
+                    </div>`;
+                }
             } else {
                 console.error('Failed to fetch businesses');
             }
@@ -242,33 +258,84 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     loadBusinesses();
+
     //Location:
+    function findMyState() {
+        console.log('Starting location request...');
 
-    });
-
-    const findMyState = () => {
-        const status = document.querySelector('.status');
+        if (!navigator.geolocation) {
+            console.error('Geolocation not supported');
+            return;
+        }
 
         const success = (position) => {
-            console.log(position)
+            console.log('Got position:', position);
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
+            console.log('Coordinates:', { latitude, longitude });
 
-            const geoApiUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
+            const geoApiUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`;
+            console.log('Fetching from:', geoApiUrl);
 
             fetch(geoApiUrl)
-            .then(res => res.json())
-            .then(data => {
-            
+            .then(res => {
+                console.log('API Response status:', res.status);
+                if (!res.ok) {
+                    throw new Error(`HTTP error! status: ${res.status}`);
+                }
+                return res.json();
             })
-        }
-        const error = (position) => {
-            status.textContent = "unable to retrieve location";
-        }
+            .then(data => {
+                console.log('Location data:', data);
+                if (data.principalSubdivision) {
+                    userState = data.principalSubdivision;
+                    console.log(userState);
+                    // Reload businesses after getting state
+                    loadBusinesses();
+                } else {
+                    console.error('Could not determine state');
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching location:', error);
+            });
+        };
 
-        navigator.geolocation.getCurrentPosition(success, error);
+        const error = (error) => {
+            console.error('Geolocation error:', error);
+            console.error('Error code:', error.code);
+            console.error('Error message:', error.message);
+        };
+
+        const options = {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 0
+        };
+
+        try {
+            console.log('Requesting geolocation...');
+            navigator.geolocation.getCurrentPosition(success, error, options);
+        } catch (e) {
+            console.error('Error in geolocation request:', e);
+        }
+    
+        
     }
 
-
-
-    document.querySelector(".find-loc").addEventListener("click", findLocation);
+    // Add click handler with error catching
+    try {
+        const locationButton = document.querySelector(".find-loc");
+        if (locationButton) {
+            locationButton.addEventListener("click", (e) => {
+                e.preventDefault();
+                console.log('Location button clicked');
+                findMyState();
+            });
+        } else {
+            console.error('Location button not found');
+        }
+    } catch (e) {
+        console.error('Error setting up location button:', e);
+    }
+});
