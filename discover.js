@@ -79,7 +79,8 @@ document.addEventListener('DOMContentLoaded', function () {
                                 <h5 align="center" class="card-title">${business.businessName}</h5>
                                 <strong><h6 class="card-type">${business.businessType}</h6></strong>
                                 <p class="card-text"><strong>Best-sellers:</strong> ${business.topselling1}, ${business.topselling2}, ${business.topselling3}</p>
-                            </div>
+                                <p class="card-text">Location: ${business.state}</p> 
+                                </div>
                             <div class="card-footer">
                                 <small class="text-muted">${business.stamps} stamps on a card</small>
                                 <br>
