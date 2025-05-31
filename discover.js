@@ -181,5 +181,4 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     loadBusinesses();
 
-
     });
