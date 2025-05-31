@@ -7,6 +7,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.static('uploads'));
+app.use(express.static(path.join(__dirname, '..'))); // Serve files from parent directory
 app.use(express.json());
 
 // Create uploads directory if it doesn't exist
@@ -44,7 +45,8 @@ app.post('/upload', upload.single('logoImage'), (req, res) => {
             topselling1: req.body.topselling1,
             topselling2: req.body.topselling2,
             topselling3: req.body.topselling3,
-            logoImage: req.file ? `http://localhost:3000/${req.file.filename}` : null
+            reward: req.body.reward,
+            logoImage: req.file ? `http://localhost:3000/${req.file.filename}` : './images/default-business.png'
         };
         
         // Add new business to array
@@ -71,6 +73,6 @@ app.get('/businesses', (req, res) => {
     }
 });
 
-app.listen(3000, () => {
+app.listen(3000, '0.0.0.0', () => {
     console.log('Server running on http://localhost:3000');
 });
