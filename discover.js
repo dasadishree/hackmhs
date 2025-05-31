@@ -3,7 +3,7 @@ let businessStamps = {};
 let userState = ''; // Add variable to store state
 
 // Server configuration
-const SERVER_URL = 'http://localhost:3000'; // Change this to your deployed server URL
+const SERVER_URL = 'http://localhost:3000'; // Local development server
 
 // Load saved stamps from localStorage when the script starts
 function loadSavedStamps() {

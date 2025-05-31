@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Server configuration
-    const SERVER_URL = 'http://localhost:3000'; // Change this to your deployed server URL
+    const SERVER_URL = 'http://localhost:3000'; // Local development server
 
     document.getElementById('settingsForm').addEventListener('submit', async function (e) {
         e.preventDefault();
