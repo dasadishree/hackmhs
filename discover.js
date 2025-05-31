@@ -1,5 +1,55 @@
+let stamps = 0;
+let businessStamps = {};
+
+// Load saved stamps from localStorage when the script starts
+function loadSavedStamps() {
+    const savedStamps = localStorage.getItem('businessStamps');
+    if (savedStamps) {
+        businessStamps = JSON.parse(savedStamps);
+    } else {
+        businessStamps = {};
+    }
+}
+
+function claim(businessName) {
+    // Reset stamps for this business
+    if (businessStamps[businessName]) {
+        businessStamps[businessName] = 0;
+        localStorage.setItem('businessStamps', JSON.stringify(businessStamps));
+    }
+    window.location.href = 'claim.html';
+}
+
+function incrementStamp(businessName, maxStamps) {
+    if (!businessStamps[businessName]) {
+        businessStamps[businessName] = 0;
+    }
+    
+    if (businessStamps[businessName] < maxStamps) {
+        businessStamps[businessName]++;
+        const safeName = businessName.replace(/[^a-zA-Z0-9]/g, '-');
+        const cardImage = document.querySelector(`#stampCode-${safeName}`).closest('.flip-card-back').querySelector('.card-image');
+        cardImage.src = `./stamp-images/${businessStamps[businessName]}-stamps.png`;
+        
+        // Show claim button if stamps are complete
+        if (businessStamps[businessName] >= maxStamps) {
+            const claimButton = document.querySelector(`#stampCode-${safeName}`).closest('.flip-card-back').querySelector('.claim-button');
+            if (claimButton) {
+                claimButton.style.display = 'inline-block';
+            }
+        }
+        
+        // Save to localStorage after incrementing
+        localStorage.setItem('businessStamps', JSON.stringify(businessStamps));
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     let currentUser = null;
+    const confirmationCode = "thisisthecode";
+
+    // Load saved stamps when the page loads
+    loadSavedStamps();
 
     // Check if user is logged in
     const storedUser = localStorage.getItem('currentUser');
@@ -10,6 +60,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function createBusinessCard(business) {
         const userStamps = currentUser ? currentUser.stamps[business.id] || 0 : 0;
+        const safeBusinessName = business.businessName.replace(/[^a-zA-Z0-9]/g, '-');
+        const escapedBusinessName = business.businessName.replace(/'/g, "\\'");
+        const currentStamps = businessStamps[business.businessName] || 0;
+        const showClaimButton = currentStamps >= business.stamps;
+        
         const cardHtml = `
             <div class="col-auto p-1">
                 <div class="flip-card">
@@ -31,20 +86,25 @@ document.addEventListener('DOMContentLoaded', function () {
                         <div class="flip-card-back">
                             <h5>STAMPS</h5>
                             <br>
-                            <img class="card-image" src="./stamp-images/${userStamps}-stamps.png">
-                            ${currentUser ? `
-                                <center>
-                                    <button type="button" class="btn stamp-it" 
-                                        onclick="addStamp('${business.id}')" 
-                                        ${userStamps >= business.stamps ? 'disabled' : ''}>
-                                        stamp it!
-                                    </button>
-                                </center>
-                            ` : `
-                                <center>
-                                    <p>Please log in to collect stamps</p>
-                                </center>
-                            `}
+                            <img class="card-image" src="./stamp-images/${currentStamps}-stamps.png">
+                            <center>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1" class="my-1 mt-4"><strong>password</strong></label>
+                                    <input type="password" class="form-control" id="stampCode-${safeBusinessName}" placeholder="Password" />
+                                </div>
+                                <button type="button" class="btn" style="margin-top: 5px; background-color: #ef8172; border: 1cm;" 
+                                    onclick="if(document.getElementById('stampCode-${safeBusinessName}').value === '${confirmationCode}') {
+                                        console.log('Code matches!'); 
+                                        incrementStamp('${escapedBusinessName}', ${business.stamps});
+                                        console.log('Stamps for ${escapedBusinessName}:', businessStamps['${escapedBusinessName}']);
+                                    } 
+                                    else { 
+                                        console.log('Code does not match!'); 
+                                    }">stamp it!</button>
+
+                                <button type="button" class="btn claim-button" style="margin-top: 5px; background-color: rgb(255, 0, 157); border: 1cm; display: ${showClaimButton ? 'inline-block' : 'none'};" 
+                                    onclick="claim('${escapedBusinessName}')">CLAIM!!!</button>
+                            </center>
                         </div>
                     </div>
                 </div>
@@ -74,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Add stamp function
-    window.addStamp = async function(businessId) {
+    window.addStamp = async function (businessId) {
         if (!currentUser) return;
 
         try {
@@ -103,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     // Login function
-    window.login = async function(email, password) {
+    window.login = async function (email, password) {
         try {
             const response = await fetch('http://localhost:3000/login', {
                 method: 'POST',
@@ -129,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     // Register function
-    window.register = async function(email, password) {
+    window.register = async function (email, password) {
         try {
             const response = await fetch('http://localhost:3000/register', {
                 method: 'POST',
@@ -150,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     // Logout function
-    window.logout = function() {
+    window.logout = function () {
         currentUser = null;
         localStorage.removeItem('currentUser');
         updateUIForLoggedInUser();
@@ -161,7 +221,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Add login/logout buttons to the header
         const header = document.querySelector('.nav');
         const authButton = document.querySelector('.auth-button');
-        
+
         if (currentUser) {
             if (!authButton) {
                 const logoutButton = document.createElement('li');
@@ -179,6 +239,29 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     }
-    loadBusinesses();
 
-    });
+
+    loadBusinesses();
+    //Location:
+
+    const findLocation = () => {
+        const status = document.querySelector('.status');
+        const success = (position) => {
+            console.log(position)
+        }
+        const error = (position) => {
+            status.textContent = "unable to retrieve location";
+        }
+
+
+
+        navigator.geolocation.getCurrentPosition(success, error);
+
+
+
+    }
+
+
+
+    document.querySelector(".find-loc").addEventListener("click", findLocation);
+});
