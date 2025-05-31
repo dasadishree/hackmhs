@@ -1,0 +1,28 @@
+.body{
+    background-color: rgb(189, 149, 159);
+}
+
+label{
+    color: white;
+    font-weight: bold;
+}
+
+#submit{
+    background-color: rgb(161,117,153);
+}
+
+li{
+    font-weight: bold;
+    font-size: 25px
+}
+
+#h2{
+    color: white;
+    font-weight: bold;
+}
+
+.form-group{
+    width: 500px;
+    display: flex;
+
+}

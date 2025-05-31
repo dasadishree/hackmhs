@@ -6,48 +6,50 @@
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="body">
     <header
       class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"
     >
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href="#" class="nav-link">home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">settings</a></li>
+        <li class="nav-item"><a href="#" class="nav-link" style = "color:white">home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link" style = "color:white">discover</a></li>
+        <li class="nav-item"><a href="#" class="nav-link" style = "color:white">settings</a></li>
       </ul>
     </header>
-    <h2 align="center">settings</h2>
+    <h2 align="center" id="h2">business settings</h2>
     <br>
     <form id="settingsForm">
-        <div class="form-group">
-            <label for="exampleFormControlInput1">name of business:</label>
-            <input type="text" class="form-control" id="businessName">
-        </div>
+        
+        <center><div class="form-group">
+            <label for="exampleFormControlInput1" class = "py-2">name of business:</label>
+            <input type="text" class="form-control input" id="businessName">
+        </div></center>
         <br>
 
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">type of business:</label>
-            <select class="form-control" id="businessType">
+        <center><div class="form-group">
+            <label for="exampleFormControlSelect1" class="py-2">type of business:</label>
+            <select class="form-control input" id="businessType">
                 <option>--</option>
                 <option>food & beverage</option>
                 <option>arts & entertainment</option>
                 <option>groceries & markets</option>
                 <option>health & beauty</option>
                 <option>fashion & apparel</option>
-                <option>miscellaneous</option>
+                <option>other</option>
             </select>
-        </div>
+        </div></center>
 
         <br>
-        <div class="form-group">
-            <label for="exampleFormControlFile1">business logo:</label>
+        <center><div class="form-group">
+            <label for="exampleFormControlFile1" class="py-2">business logo:</label>
             <br>
-            <input type="file" class="form-control-file" id="logoImage" name="logoImage">
+            <input type="file" class="form-control-file px-4" id="logoImage" name="logoImage">
         </div>
 
         <br>
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">how many stamps on a card?</label>
-            <select class="form-control" id="stamps">
+        <center><div class="form-group">
+            <label for="exampleFormControlSelect1" class="py-2">how many stamps on a card?</label>
+            <select class="form-control input" id="stamps">
                 <option>--</option>
                 <option>1</option>
                 <option>2</option>
@@ -70,18 +72,18 @@
                 <option>19</option>
                 <option>20</option>
             </select>
-        </div>
+        </div></center>
 
         <br>
-        <div class="form-group">
-            <label for="exampleFormControlInput1">top selling goods/services:</label>
-            <input type="text" class="form-control" id="topselling1" placeholder="#1:">
-            <input type="text" class="form-control" id="topselling2" placeholder="#2:">
-            <input type="text" class="form-control" id="topselling3" placeholder="#3:">
-        </div>
+        <center><div class="form-group">
+            <label for="exampleFormControlInput1" class="py-2">top selling goods/services:</label>
+            <input type="text" class="form-control my-2 input mx-3" id="topselling1" placeholder="#1:">
+            <input type="text" class="form-control my-2 input mx-3" id="topselling2" placeholder="#2:">
+            <input type="text" class="form-control my-2 input mx-3" id="topselling3" placeholder="#3:">
+        </div></center>
 
         <br>
-        <center><button type="submit" class="btn btn-primary">Submit</button></center>
+        <center><button type="submit" class="btn btn-primary" id="submit">add your business</button></center>
     </form>
 
     <script src="settings.js"></script>
