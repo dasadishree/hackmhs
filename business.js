@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
         formData.append('topselling2', topselling2);
         formData.append('topselling3', topselling3);
         formData.append('reward', reward);
+        formData.append('state', state);
         const logoFile = document.getElementById('logoImage').files[0];
         if (logoFile) {
             formData.append('logoImage', logoFile);

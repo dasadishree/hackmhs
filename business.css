@@ -79,3 +79,11 @@ li{
     display: flex;
     justify-content: center;
 }
+
+.town-input{
+    margin-top: 10px;
+}
+
+.town-text{
+    margin-right: 10px;
+}
