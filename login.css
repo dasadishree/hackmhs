@@ -1,22 +1,41 @@
 body{
-    background-color: rgb(205,99,125);
+    background-color: rgb(189, 149, 159);
 }
 .form-container{
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items: flex-start;
 }
 
-.btn-primary{
+.btn{
     background-color: rgb(161,117,153);
     border-width: 0px;
 }
 
 label{
     color: white;
+    font-size: 20px;
 }
 
-h2{
+h1{
     color: white;
+}
+
+.logo{
+    height: 200px;
+}
+
+.nav-link{
+    color: white;
+    border-width: 0px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#home{
+    background-color: rgb(161,117,153);
+}
+
+.email-input{
+    width: 600px;
 }
