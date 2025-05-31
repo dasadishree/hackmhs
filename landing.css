@@ -37,3 +37,20 @@
     font-size: 25px;
     font-weight: bold;
 }
+
+.carousel-control-prev{
+    width: 30px;
+    height:30px;
+}
+
+.carousel-control-next{
+    width: 30px;
+    height: 30px;
+}
+#myCarousel{
+    width: 50vh;
+}
+.carouselContainer{
+    display: flex;
+    justify-content: center;
+}
