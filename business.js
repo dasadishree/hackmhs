@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Server configuration
+    const SERVER_URL = 'http://localhost:3000'; // Change this to your deployed server URL
+
     document.getElementById('settingsForm').addEventListener('submit', async function (e) {
         e.preventDefault();
 
@@ -35,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         try {
             console.log('Attempting to connect to server...');
-            const response = await fetch('http://localhost:3000/upload', {
+            const response = await fetch(`${SERVER_URL}/upload`, {
                 method: 'POST',
                 body: formData,
             });
@@ -56,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } catch (error) {
             console.error('Detailed error:', error);
             if (error.message === 'Failed to fetch') {
-                alert('Could not connect to the server. Please make sure the server is running at http://localhost:3000');
+                alert(`Could not connect to the server. Please make sure the server is running at ${SERVER_URL}`);
             } else {
                 alert('Error adding business: ' + error.message);
             }

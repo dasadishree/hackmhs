@@ -2,6 +2,9 @@ let stamps = 0;
 let businessStamps = {};
 let userState = ''; // Add variable to store state
 
+// Server configuration
+const SERVER_URL = 'http://localhost:3000'; // Change this to your deployed server URL
+
 // Load saved stamps from localStorage when the script starts
 function loadSavedStamps() {
     const savedStamps = localStorage.getItem('businessStamps');
@@ -119,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     async function loadBusinesses() {
         try {
-            const response = await fetch('http://localhost:3000/businesses');
+            const response = await fetch(`${SERVER_URL}/businesses`);
             if (response.ok) {
                 const businesses = await response.json();
                 const cardContainer = document.querySelector('.row');
@@ -155,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         try {
             const userStamps = currentUser.stamps[businessId] || 0;
-            const response = await fetch('http://localhost:3000/update-stamps', {
+            const response = await fetch(`${SERVER_URL}/update-stamps`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -181,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Login function
     window.login = async function (email, password) {
         try {
-            const response = await fetch('http://localhost:3000/login', {
+            const response = await fetch(`${SERVER_URL}/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -207,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Register function
     window.register = async function (email, password) {
         try {
-            const response = await fetch('http://localhost:3000/register', {
+            const response = await fetch(`${SERVER_URL}/register`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
