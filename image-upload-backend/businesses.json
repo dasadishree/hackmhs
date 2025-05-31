@@ -36,6 +36,7 @@
     "topselling1": "Wings",
     "topselling2": "Burritos",
     "topselling3": "Tacos",
-    "logoImage": "http://localhost:3000/1748704436512-titos-burritos.png"
+    "logoImage": "http://localhost:3000/1748704436512-titos-burritos.png",
+    "reward": "Spicy wings"
   }
 ]
