@@ -1,67 +1,38 @@
 <html lang="en" data-arp="">
-  <head>
+
+<head>
     <meta name="emotion-insertion-point" content="" />
-    <script
-      type="text/javascript"
-      src="/___vscode_livepreview_injected_script"
-    ></script>
+    <script type="text/javascript" src="/___vscode_livepreview_injected_script"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
-      crossorigin="anonymous"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous" />
     <link rel="stylesheet" href="./login.css" />
-  </head>
+</head>
 
-  <body>
-    <header
-      class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"
-    >
-      <ul class="nav nav-pills">
-        <li class="nav-item"><a href="#" class="nav-link">home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">discover</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">settings</a></li>
-      </ul>
-    </header>
+<body>
     <div class="form-container">
-      <form>
-        <center><img src="./logo.png" class="logo" /></center>
-        <h1><strong>sign in</strong></h1>
-        <div class="form-group">
-          <label for="exampleInputEmail1" class="my-1 email-input"
-            ><strong>email address</strong></label
-          >
-          <input
-            type="email"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            placeholder="Enter email"
-          />
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1" class="my-1 mt-4"
-            ><strong>password</strong></label
-          >
-          <input
-            type="password"
-            class="form-control"
-            id="exampleInputPassword1"
-            placeholder="Password"
-          />
-        </div>
-        <button type="submit" class="btn btn-primary my-4">login</button>
-      </form>
+        <form id="loginForm">
+            <center><img src="./logo.png" class="logo" /></center>
+            <h1><strong>sign in</strong></h1>
+            <div class="form-group">
+                <label for="exampleInputEmail1" class="my-1 email-input"><strong>email address</strong></label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Enter email" />
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1" class="my-1 mt-4"><strong>password</strong></label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+            </div>
+            <button type="submit" class="btn btn-primary my-4">login</button>
+        </form>
     </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    <script src="login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>
