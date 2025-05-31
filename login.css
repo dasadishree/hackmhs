@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(189, 149, 159);
+    background-color: white;
 }
 .form-container{
     display: flex;
@@ -14,12 +14,12 @@ body{
 }
 
 label{
-    color: white;
+    color: #dd616d;
     font-size: 20px;
 }
 
 h1{
-    color: white;
+    color: #dd616d;
 }
 
 .logo{
