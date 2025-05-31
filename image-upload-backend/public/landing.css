@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap');
+
+
+.gradient-background {
+    padding: 0;
+    margin:0;
+    background: linear-gradient(300deg, #8881aa, #dd616d, #ef8172);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+    width:100vw;
+    height: 200px;
+}
+
+#gradient-background2 {
+    padding: 0;
+    margin:0;
+    background: linear-gradient(300deg, #db5c4b, #cd3b4a, #7065a7);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+    width: 200px;
+    border: 4px solid white;
+    color: white;
+    font-weight: bold;
+    padding: 15px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.text{
+    color: white;
+    font-weight: bold;
+
+}
+
+#bod{
+    background-color: white;
+}
+
+.nav{
+    color: rgb(189, 149, 159);
+    font-size: 25px;
+    font-weight: bold;;
+}
+
+.carousel-control-prev{
+    width: 30px;
+    height:30px;
+}
+
+.carousel-control-next{
+    width: 30px;
+    height: 30px;
+}
+#myCarousel{
+    width: 300px;
+    grid-area: 1 1 3 1;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(219, 115, 119);
+}
+
+.head{
+    margin: 0px;
+    padding-right: 100px;
+    padding-left: 100px;
+    background-color: rgb(219, 115, 119);
+}
+
+.text-container{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.heading-text{
+    font-size: px;
+}
+
+.title{
+    font-size: 100px;
+    font-family: "Londrina Outline";
+}
+
+.h1-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 400px;
+}
+
+.bottom-container{
+    display: flex;
+    justify-content: space-b;
+}
+
+.about-text{
+    color: white;
+
+}
+
+
+
+
+
+
