@@ -39,6 +39,7 @@ app.post('/upload', upload.single('logoImage'), (req, res) => {
         
         // Create new business object
         const newBusiness = {
+            id: Date.now().toString(), // Add unique ID
             businessName: req.body.businessName,
             businessType: req.body.businessType,
             stamps: req.body.stamps,
