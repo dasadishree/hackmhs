@@ -96,13 +96,14 @@
 .title{
     font-size: 100px;
     font-family: "Londrina Outline";
+    margin-top: 0px;
 }
 
 .h1-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 400px;
+    height: 8s00px;
 }
 
 .container3{
@@ -121,7 +122,11 @@
 
 .logo{
     width: 50%;
-    
+}
+
+.img-container{
+    display: flex;
+    justify-content: center;
 }
 
 
