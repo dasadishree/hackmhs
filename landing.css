@@ -1,10 +1,11 @@
 .gradient-background {
     padding: 0;
     margin:0;
-    background: linear-gradient(300deg, #8881aa, #bd959f, #ef8172);
+    background: linear-gradient(300deg, #8881aa, #dd616d, #ef8172);
     background-size: 180% 180%;
     animation: gradient-animation 18s ease infinite;
     width:100vw;
+    height: 200px;
 }
 
 
@@ -24,5 +25,15 @@
 .text{
     color: white;
     font-weight: bold;
-    
+
+}
+
+#bod{
+    background-color: rgb(189, 149, 159);
+}
+
+.nav{
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
 }
