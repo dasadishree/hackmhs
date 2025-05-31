@@ -153,7 +153,7 @@ li{
     border-radius: 20px;
 }
 
-.flip-card-front img {
+.flip-card-front img, .flip-card-back img {
     width: 100%;
     height: auto;
     max-height: 200px;
@@ -196,12 +196,24 @@ li{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .flip-card-back h5 {
     color: #dd616d;
     font-size: 24px;
     font-weight: bold;
+    margin-bottom: 0px;
 }
 
   
+.card-image{
+    border-radius: 16px;
+    margin-top: 0px;
+}
+
+.stamp-it{
+    margin-top: 5px;
+    background-color: #ef8172;
+    border: 1cm;
+}
