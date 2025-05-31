@@ -8,7 +8,7 @@
     background-size: 180% 180%;
     animation: gradient-animation 18s ease infinite;
     width:100vw;
-    height: 200px;
+    height: 600px;
 }
 
 #gradient-background2 {
@@ -52,7 +52,7 @@
 .nav{
     color: rgb(189, 149, 159);
     font-size: 25px;
-    font-weight: bold;;
+    font-weight: bold;
 }
 
 .carousel-control-prev{
@@ -73,6 +73,7 @@
     display: flex;
     justify-content: center;
     background-color: rgb(219, 115, 119);
+    
 }
 
 .head{
