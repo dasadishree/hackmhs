@@ -1,0 +1,20 @@
+[
+  {
+    "businessName": "Playa Bowls",
+    "businessType": "food & beverage",
+    "stamps": "10",
+    "topselling1": "Acai Bowls",
+    "topselling2": "Smoothies",
+    "topselling3": "Juices",
+    "logoImage": "../images/playa-bowls.png"
+  },
+  {
+    "businessName": "CycleBar",
+    "businessType": "health & beauty",
+    "stamps": "10",
+    "topselling1": "Strength cycling classes",
+    "topselling2": "Connect classes",
+    "topselling3": "Performance cycling",
+    "logoImage": "../images/cyclebar.png"
+  }
+]
