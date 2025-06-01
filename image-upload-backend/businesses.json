@@ -46,5 +46,51 @@
     "reward": "Spicy wings",
     "state": "Texas",
     "minpurchase": "$5"
-    }
+  },
+  {
+    "businessName": "Vinnie's Brick Oven Pan Pizza",
+    "businessType": "food & beverage",
+    "stamps": "8",
+    "topselling1": "Pizza",
+    "topselling2": "Pasta",
+    "topselling3": "Salad",
+    "reward": "Fresh pan pizza",
+    "logoImage": "http://localhost:3000/1748728807395-vinneie.png",
+    "state": "New Jersey",
+    "minpurchase": "$7"
+  },
+  {
+    "businessName": "Fiamma Wood Fired Pizza",
+    "businessType": "food & beverage",
+    "stamps": "15",
+    "topselling1": "Pizza",
+    "topselling2": "Pasta",
+    "topselling3": "Cheese",
+    "reward": "50% Discount",
+    "logoImage": "http://localhost:3000/1748729068628-faiam.png",
+    "state": "Pennsylvania",
+    "minpurchase": "$15"
+  },
+  {
+    "businessName": "Oscar's Deli & Restraunt",
+    "businessType": "food & beverage",
+    "stamps": "7",
+    "topselling1": "Juices",
+    "topselling2": "Sandwiches",
+    "topselling3": "Meat",
+    "reward": "Sandwich",
+    "logoImage": "http://localhost:3000/1748729174038-oscar.png",
+    "state": "New Jersey",
+    "minpurchase": "$4"
+  },
+  {
+    "businessName": "The Office Tavern & Grill",
+    "businessType": "food & beverage",
+    "stamps": "5",
+    "topselling1": "34",
+    "topselling2": "833e",
+    "topselling3": "fdff",
+    "reward": "494394",
+    "logoImage": "http://localhost:3000/1748735144386-TheOfficeLogo.png"
+  }
 ]

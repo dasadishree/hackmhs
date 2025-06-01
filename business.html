@@ -36,7 +36,7 @@
     <h2 align="center" id="h2">business settings</h2>
     <center>
       <div class="form-group">
-        <label for="exampleFormControlInput1" class="py-2">name of business:</label>
+        <label for="businessName" class="py-2">name of business:</label>
         <input type="text" class="form-control input" id="businessName">
       </div>
     </center>
@@ -44,7 +44,7 @@
 
     <center>
       <div class="form-group">
-        <label for="exampleFormControlSelect1" class="py-2">type of business:</label>
+        <label for="businessType" class="py-2">type of business:</label>
         <select class="form-control input" id="businessType">
           <option>--</option>
           <option>food & beverage</option>
@@ -60,7 +60,7 @@
     <br>
     <center>
       <div class="form-group">
-        <label for="exampleFormControlFile1" class="py-2">business logo:</label>
+        <label for="logoImage" class="py-2">business logo:</label>
         <br>
         <input type="file" class="form-control-file px-4" id="logoImage" name="logoImage">
       </div>
@@ -68,7 +68,7 @@
       <br>
       <center>
         <div class="form-group">
-          <label for="exampleFormControlSelect1" class="py-2">how many stamps on a card?</label>
+          <label for="stamps" class="py-2">how many stamps on a card?</label>
           <select class="form-control input" id="stamps">
             <option>--</option>
             <option>3</option>
@@ -86,7 +86,7 @@
 
       <center>
         <div class="form-group">
-          <label for="exampleFormControlInput1" class="py-2">reward:</label>
+          <label for="reward" class="py-2">reward:</label>
           <input type="text" class="form-control input" id="reward">
         </div>
       </center>
@@ -94,7 +94,7 @@
 
       <center>
         <div class="form-group">
-          <label for="exampleFormControlInput1" class="py-2">top selling goods/services:</label>
+          <label for="topselling1" class="py-2">top selling goods/services:</label>
           <input type="text" class="form-control my-2 input mx-3" id="topselling1" placeholder="#1:">
           <input type="text" class="form-control my-2 input mx-3" id="topselling2" placeholder="#2:">
           <input type="text" class="form-control my-2 input mx-3" id="topselling3" placeholder="#3:">
@@ -103,7 +103,7 @@
 
       <center>
         <div class="form-group">
-          <label for="exampleFormControlSelect1" class="py-2 my-3">state: </label>
+          <label for="state" class="py-2 my-3">state: </label>
           <select class="form-control input my-3 mx-2" id="state">
             <option>--</option>
             <option>Alabama</option>
@@ -162,7 +162,7 @@
       </center>
       <center>
         <div class="form-group">
-          <label for="exampleFormControlInput1" class="py-2">minimum purchase cost:</label>
+          <label for="min-purchase" class="py-2">minimum purchase cost:</label>
           <input type="text" class="form-control input" id="min-purchase">
         </div>
       </center>
@@ -171,6 +171,8 @@
           <button class="btn my-4" type="submit" id="submit">Submit form</button>
         </div>
       </center>
+    </form>
+  </div>
 
   <script src="business.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"

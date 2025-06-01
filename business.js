@@ -13,15 +13,40 @@ document.addEventListener('DOMContentLoaded', function () {
         const topselling2 = document.getElementById('topselling2').value;
         const topselling3 = document.getElementById('topselling3').value;
         const reward = document.getElementById('reward').value;
+        const state = document.getElementById('state').value;
         const minpurchase = document.getElementById('min-purchase').value;
         
-        if (!businessName || businessType === '--' || stamps === '--' || !topselling1 || !topselling2 || !topselling3 || !reward) {
+        console.log('Form values:', {
+            businessName,
+            businessType,
+            stamps,
+            topselling1,
+            topselling2,
+            topselling3,
+            reward,
+            state,
+            minpurchase
+        });
+
+        // Check if any required field is empty
+        if (!businessName) console.log('Missing business name');
+        if (businessType === '--') console.log('Missing business type');
+        if (stamps === '--') console.log('Missing stamps');
+        if (!topselling1) console.log('Missing topselling1');
+        if (!topselling2) console.log('Missing topselling2');
+        if (!topselling3) console.log('Missing topselling3');
+        if (!reward) console.log('Missing reward');
+        if (state === '--') console.log('Missing state');
+        if (!minpurchase) console.log('Missing minpurchase');
+
+        if (!businessName || businessType === '--' || stamps === '--' || !topselling1 || !topselling2 || !topselling3 || !reward || state === '--' || !minpurchase) {
             alert('Please fill in all required fields');
             return;
         }
 
         const formData = new FormData();
 
+        // Add all form fields with exact names
         formData.append('businessName', businessName);
         formData.append('businessType', businessType);
         formData.append('stamps', stamps);
@@ -30,10 +55,17 @@ document.addEventListener('DOMContentLoaded', function () {
         formData.append('topselling3', topselling3);
         formData.append('reward', reward);
         formData.append('state', state);
-        formData.append('minpurchase', minpurchase);
+        formData.append('minpurchase', minpurchase); // This is the key that needs to match the server
+
         const logoFile = document.getElementById('logoImage').files[0];
         if (logoFile) {
             formData.append('logoImage', logoFile);
+        }
+
+        // Log the FormData contents
+        console.log('FormData contents:');
+        for (let pair of formData.entries()) {
+            console.log(pair[0] + ': ' + pair[1]);
         }
 
         try {
