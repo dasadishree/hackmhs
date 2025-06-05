@@ -1,3 +1,10 @@
+![image](https://github.com/user-attachments/assets/f95c7051-96c4-4824-b610-2ed2631c85fe)
+![image](https://github.com/user-attachments/assets/51e5b161-863f-4cb2-8377-576925040e67)
+![image](https://github.com/user-attachments/assets/4b7ac975-b73e-4090-b646-8a252811dd6c)
+![image](https://github.com/user-attachments/assets/6287fc54-815d-4fae-b7f7-7a93d1ca2524)
+
+https://docs.google.com/presentation/d/1Ds70wXw8Xy1B6GnF4n2MQrANe30xpVi1-1CC8ISIWhY/edit?slide=id.p#slide=id.p
+
 ## Inspiration
 When we visit local cafes, we love collecting loyalty stamp cards so that we can redeem free gifts after we visit and buy enough items. We wanted to digitize this so that this idea is simpler for businesses and users. 
 
