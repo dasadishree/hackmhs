@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Server configuration
-    const SERVER_URL = 'http://localhost:3000'; // Local development server
+    const SERVER_URL = 'https://stampd-backend-3azx.onrender.com/'; 
 
     document.getElementById('settingsForm').addEventListener('submit', async function (e) {
         e.preventDefault();

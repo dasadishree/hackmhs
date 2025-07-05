@@ -2,8 +2,7 @@ let stamps = 0;
 let businessStamps = {};
 let userState = ''; // Add variable to store state
 
-// Server configuration
-const SERVER_URL = 'http://localhost:3000'; // Local development server
+const SERVER_URL = 'https://stampd-backend-3azx.onrender.com/'; 
 
 // Load saved stamps from localStorage when the script starts
 function loadSavedStamps() {

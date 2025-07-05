@@ -5,6 +5,10 @@ const path = require('path');
 const fs = require('fs');
 const app = express();
 
+// Get port from environment variable or default to 3000
+const PORT = process.env.PORT || 3000;
+const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
+
 app.use(cors());
 app.use(express.static('uploads'));
 app.use(express.static(path.join(__dirname, '..'))); // Serve files from parent directory
@@ -73,7 +77,7 @@ app.post('/upload', upload.single('logoImage'), (req, res) => {
             reward: req.body.reward || '',
             state: req.body.state || '',
             minpurchase: req.body.minpurchase || '',
-            logoImage: req.file ? `http://localhost:3000/${req.file.filename}` : './images/default-business.png'
+            logoImage: req.file ? `${BASE_URL}/${req.file.filename}` : './images/default-business.png'
         };
         
         console.log('New business object:', newBusiness);
@@ -102,6 +106,7 @@ app.get('/businesses', (req, res) => {
     }
 });
 
-app.listen(3000, '0.0.0.0', () => {
-    console.log('Server running on http://localhost:3000');
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server running on port ${PORT}`);
+    console.log(`Base URL: ${BASE_URL}`);
 });
