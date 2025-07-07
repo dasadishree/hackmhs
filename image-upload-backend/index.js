@@ -106,6 +106,32 @@ app.get('/businesses', (req, res) => {
     }
 });
 
+// Endpoint to delete a business
+app.delete('/businesses/:id', (req, res) => {
+    try {
+        const businessId = req.params.id;
+        const businesses = JSON.parse(fs.readFileSync('businesses.json', 'utf8'));
+        
+        // Find the business index
+        const businessIndex = businesses.findIndex(business => business.id === businessId);
+        
+        if (businessIndex === -1) {
+            return res.status(404).json({ error: 'Business not found' });
+        }
+        
+        // Remove the business from the array
+        const deletedBusiness = businesses.splice(businessIndex, 1)[0];
+        
+        // Save the updated businesses array
+        fs.writeFileSync('businesses.json', JSON.stringify(businesses, null, 2));
+        
+        res.json({ success: true, message: 'Business deleted successfully', business: deletedBusiness });
+    } catch (error) {
+        console.error('Error deleting business:', error);
+        res.status(500).json({ error: 'Failed to delete business' });
+    }
+});
+
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server running on port ${PORT}`);
     console.log(`Base URL: ${BASE_URL}`);
