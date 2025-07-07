@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const SERVER_URL = 'https://stampd-backend-3azx.onrender.com/'; 
+    const SERVER_URL = 'https://stampd-backend-3azx.onrender.com';
 
     document.getElementById('settingsForm').addEventListener('submit', async function (e) {
         e.preventDefault();
