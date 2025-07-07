@@ -82,15 +82,5 @@
     "logoImage": "https://stampd-backend-3azx.onrender.com/1748729174038-oscar.png",
     "state": "New Jersey",
     "minpurchase": "$4"
-  },
-  {
-    "businessName": "The Office Tavern & Grill",
-    "businessType": "food & beverage",
-    "stamps": "5",
-    "topselling1": "34",
-    "topselling2": "833e",
-    "topselling3": "fdff",
-    "reward": "494394",
-    "logoImage": "https://stampd-backend-3azx.onrender.com/1748735144386-TheOfficeLogo.png"
   }
 ]
