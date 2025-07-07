@@ -42,7 +42,7 @@
     "topselling1": "Wings",
     "topselling2": "Burritos",
     "topselling3": "Tacos",
-    "logoImage": "http://localhost:3000/1748704436512-titos-burritos.png",
+    "logoImage": "https://stampd-backend-3azx.onrender.com/1748704436512-titos-burritos.png",
     "reward": "Spicy wings",
     "state": "Texas",
     "minpurchase": "$5"
@@ -55,7 +55,7 @@
     "topselling2": "Pasta",
     "topselling3": "Salad",
     "reward": "Fresh pan pizza",
-    "logoImage": "http://localhost:3000/1748728807395-vinneie.png",
+    "logoImage": "https://stampd-backend-3azx.onrender.com/1748728807395-vinneie.png",
     "state": "New Jersey",
     "minpurchase": "$7"
   },
@@ -67,7 +67,7 @@
     "topselling2": "Pasta",
     "topselling3": "Cheese",
     "reward": "50% Discount",
-    "logoImage": "http://localhost:3000/1748729068628-faiam.png",
+    "logoImage": "https://stampd-backend-3azx.onrender.com/1748729068628-faiam.png",
     "state": "Pennsylvania",
     "minpurchase": "$15"
   },
@@ -79,7 +79,7 @@
     "topselling2": "Sandwiches",
     "topselling3": "Meat",
     "reward": "Sandwich",
-    "logoImage": "http://localhost:3000/1748729174038-oscar.png",
+    "logoImage": "https://stampd-backend-3azx.onrender.com/1748729174038-oscar.png",
     "state": "New Jersey",
     "minpurchase": "$4"
   },
@@ -91,6 +91,6 @@
     "topselling2": "833e",
     "topselling3": "fdff",
     "reward": "494394",
-    "logoImage": "http://localhost:3000/1748735144386-TheOfficeLogo.png"
+    "logoImage": "https://stampd-backend-3azx.onrender.com/1748735144386-TheOfficeLogo.png"
   }
 ]
